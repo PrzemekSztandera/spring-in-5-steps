@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class SpringIn5StepsApplication {
+public class SpringIn5StepsBasicApplication {
 
 	//What are the beans? @Component
 	//What are dependencies of bean? @Autowired
@@ -19,7 +19,7 @@ public class SpringIn5StepsApplication {
 
 
 		//Application context will maintain all beans
-		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsApplication.class, args);
+		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsBasicApplication.class, args);
 
 		BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
 		BinarySearchImpl binarySearch2 = applicationContext.getBean(BinarySearchImpl.class);

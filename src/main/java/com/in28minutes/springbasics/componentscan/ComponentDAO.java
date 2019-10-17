@@ -1,4 +1,4 @@
-package com.in28minutes.springbasics;
+package com.in28minutes.springbasics.componentscan;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
