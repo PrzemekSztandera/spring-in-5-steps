@@ -1,11 +1,13 @@
 package com.in28minutes.springbasics.springin5steps;
 
 import com.in28minutes.springbasics.springin5steps.basic.BinarySearchImpl;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan("com.in28minutes.springbasics.springin5steps")
 public class SpringIn5StepsBasicApplication {
 
 	//What are the beans? @Component
@@ -19,15 +21,20 @@ public class SpringIn5StepsBasicApplication {
 
 
 		//Application context will maintain all beans
-		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsBasicApplication.class, args);
 
-		BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
-		BinarySearchImpl binarySearch2 = applicationContext.getBean(BinarySearchImpl.class);
-		System.out.println(binarySearch1);
-		System.out.println(binarySearch2);
 
-		int result = binarySearch1.binarySearch(new int[]{12, 4, 6}, 3);
-		System.out.println(result);
+
+		try(AnnotationConfigApplicationContext applicationContext =
+					new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class)) {
+
+			BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+			BinarySearchImpl binarySearch2 = applicationContext.getBean(BinarySearchImpl.class);
+			System.out.println(binarySearch1);
+			System.out.println(binarySearch2);
+
+			int result = binarySearch1.binarySearch(new int[]{12, 4, 6}, 3);
+			System.out.println(result);
+		}
 	}
 
 }
