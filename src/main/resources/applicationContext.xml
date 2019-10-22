@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="..." class="com.in28minutes.springbasics.springin5steps.xml.XmlJdbcConnection">
-        <!-- collaborators and configuration for this bean go here -->
+    <context:component-scan base-package="com.in28minutes.springbasics.springin5steps"/>
+
+    <!--
+    <bean id="xmlJdbcConnection"
+        class="com.in28minutes.springbasics.springin5steps.xml.XmlJdbcConnection">
     </bean>
 
-    <bean id="..." class="">
-        <!-- collaborators and configuration for this bean go here -->
+    <bean id="xmlPersonDAO"
+        class="com.in28minutes.springbasics.springin5steps.xml.XmlPersonDAO">
+    <property name="xmlJdbcConnection" ref="xmlJdbcConnection"/>
     </bean>
 
-    <!-- more bean definitions go here -->
+    <bean id="xmlJdbcConnectionItem"
+        class="com.in28minutes.springbasics.springin5steps.xml.XmlJdbcConnectionItem">
+    </bean>
+
+    <bean id="xmlItemDAO"
+        class="com.in28minutes.springbasics.springin5steps.xml.XmlItemDAO">
+    <property name="xmlJdbcConnectionItem" ref="xmlJdbcConnectionItem"/>
+    </bean>
+    -->
+
 </beans>
+
