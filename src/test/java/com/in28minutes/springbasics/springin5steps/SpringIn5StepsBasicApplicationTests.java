@@ -1,9 +1,9 @@
 package com.in28minutes.springbasics.springin5steps;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
 
-@SpringBootTest
+
+//@SpringBootTest
 class SpringIn5StepsBasicApplicationTests {
 
 	@Test
